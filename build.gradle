@@ -4,12 +4,15 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.2.3'
-        
-        def mobileCenterSdkVersion = '0.8.1'
-    compile "com.microsoft.azure.mobile:mobile-center-analytics:${mobileCenterSdkVersion}"
-    compile "com.microsoft.azure.mobile:mobile-center-crashes:${mobileCenterSdkVersion}"
+       
     }
 }
+dependencies {
+    def mobileCenterSdkVersion = '0.8.1'
+    compile "com.microsoft.azure.mobile:mobile-center-analytics:${mobileCenterSdkVersion}"
+    compile "com.microsoft.azure.mobile:mobile-center-crashes:${mobileCenterSdkVersion}"
+}
+
 
 repositories {
     mavenCentral()
