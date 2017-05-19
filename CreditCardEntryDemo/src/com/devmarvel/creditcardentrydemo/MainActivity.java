@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+import com.microsoft.azure.mobile.MobileCenter;
+import com.microsoft.azure.mobile.analytics.Analytics;
+import com.microsoft.azure.mobile.crashes.Crashes;
 
 import com.devmarvel.creditcardentry.library.CardValidCallback;
 import com.devmarvel.creditcardentry.library.CreditCard;
@@ -24,7 +27,8 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
+                MobileCenter.start(getApplication(), "8b791e24-b403-4efe-9f2c-4cfeae2aa09b",
+                   Analytics.class, Crashes.class);
 		final CreditCardForm noZipForm = (CreditCardForm) findViewById(R.id.form_no_zip);
 		noZipForm.setOnCardValidCallback(cardValidCallback);
 
